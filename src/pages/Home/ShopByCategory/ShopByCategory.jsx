@@ -18,7 +18,14 @@ const ShopByCategory = () => {
 
   }, [])
 
-  const handleTabChange = (CategoryName) => {
+  //for active link
+  const [activeLink, setActiveLink] = useState(null);
+
+  const handleLinkClick = (id) => {
+    setActiveLink(id);
+  };
+  const handleTabChange = (CategoryName,id) => {
+    handleLinkClick(id)
     let category = []
     allToys.map(toy => {
       const foundIndex = toy.SubCategory.indexOf(CategoryName)
@@ -29,6 +36,7 @@ const ShopByCategory = () => {
     setActiveCategory(category);
   };
 
+
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
@@ -38,9 +46,8 @@ const ShopByCategory = () => {
             {allToys.map((toy) => (
               <button
                 key={toy._id}
-                className={`py-2 px-4 mr-4 text-lg font-medium focus:outline-none ${activeCategory._id == toy._id ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-500'
-                  }`}
-                onClick={() => handleTabChange(toy.SubCategory)}
+                className={`hover:text-white py-2 px-4 mr-4 text-lg font-medium focus:outline-none ${activeLink === toy._id ? 'text-white' : 'text-slate-500'}`}
+                onClick={() => handleTabChange(toy.SubCategory,toy._id)}
               >
                 {toy.SubCategory}
               </button>

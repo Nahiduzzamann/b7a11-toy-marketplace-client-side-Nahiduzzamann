@@ -24,7 +24,7 @@ const Navbar = () => {
             <div className="mx-auto px-4 py-2 max-w-7xl flex items-center justify-between">
                 <div className="flex items-center">
                     <a href="/" className="flex items-center">
-                        <img src='../../../../public/icon.png' alt="Website Logo" className="h-8 mr-2" />
+                        <img src='https://i.ibb.co/LpCk3xr/toy-removebg-preview.png' alt="Website Logo" className="h-8 mr-2" />
                         <span className="font-bold text-xl">Car Toy World</span>
                     </a>
                 </div>
